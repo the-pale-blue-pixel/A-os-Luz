@@ -1,0 +1,7 @@
+[[Comunicación]]
+[[Interferencia]]
+[[Lenguaje]]
+[[Emisión]]
+[[Mensaje]]
+[[Radio]]
+[[Ruido]]

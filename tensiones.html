@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Introducción</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 20px;
+        overflow-x: hidden;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+    }
+
+    h2 {
+        background: yellow;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-top: 0;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+
+    /* --- CONTENEDOR DE FILAS DE IMÁGENES --- */
+    .img-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .img-box {
+        text-align: right;
+        width: 45%;
+    }
+
+    .img-box img {
+        width: 100%;
+        border-radius: 6px;
+        display: block;
+    }
+
+    .caption {
+        font-size: 0.85rem;
+        font-style: italic;
+        margin-top: 8px;
+        text-align: right;
+    }
+
+    @media (max-width: 980px) {
+        body { padding: 20px; }
+        .img-row { flex-direction: column; gap: 12px; }
+        .img-box { width: 100%; text-align: center; }
+        .caption { text-align: center; }
+    }
+</style>
+</head>
+
+<body>
+
+<h2 style="background: rgb(255, 255, 0); display: inline-block; margin-top: 0;">Tensiones</h2>
+<br>
+
+<p>
+La investigación se articula a partir de un conjunto de tensiones que permiten comprender cómo se transforma nuestra relación con el cielo en el marco de infraestructuras tecnológicas cada vez más invasivas. La primera tensión emerge entre la experiencia contemporánea del cielo y las formas preoccidentales de relacionarse con los fenómenos celestes, en las que el firmamento constituía un eje cosmológico y ritual. Más que contraponer dos sistemas de conocimiento, el proyecto aborda la distancia histórica y sensorial entre estos modos de observación, atendiendo a cómo la tecnificación extrema no ha eliminado la dimensión simbólica del cosmos, sino que la ha desplazado y reconfigurado.
+</p>
+
+<p>
+Una segunda tensión se sitúa entre la funcionalidad instrumental de las tecnologías espaciales y las narrativas que producen más allá de su propósito técnico. Fenómenos como los desplomes orbitables de satélites, la persistencia del ruido del fondo cósmico de microondas o agotamiento de la batería del Voyager I evidencian que lo tecnológico no opera únicamente en el plano instrumental, sino que genera significados residuales que rozan lo mítico o lo sagrado (Davis, 2021; Bataille, 1991). Desde esta perspectiva, el proyecto parte de la hipótesis de que la infraestructura espacial contemporánea funciona como un nuevo dispositivo cosmológico, capaz de producir ritualidades seculares, metanarrativas y modos alternativos de imaginar lo que entendemos por “cosmos”.
+</p>
+
+<p>
+Finalmente, la investigación aborda la tensión entre la territorialidad de la mirada y la abstracción del dato flotante. La astronomía contemporánea produce información que circula desprendida de su punto de origen, transformando el cielo en un conjunto de registros móviles más que en una experiencia situada. Frente a ello, el proyecto retoma la importancia del territorio a través de dos enclaves de observación: el Observatorio Anstronómico ALMA en Atacama y el Observatorio Prehispánico Altavista en Zacatecas.  Ambos sitios atravesados por los trópicos de Capricornio y Cáncer, respectivamente.
+</p>
+
+<!-- =================== FILA 1 =================== -->
+<div class="img-row">
+
+    <div class="img-box">
+        <img src="imagenes/lluvia_de_estrellas.png" alt="Lluvia">
+        <div class="caption">Lluvia de estrellas gemínidas</div>
+    </div>
+
+    <div class="img-box">
+        <img src="imagenes/contaminacion_cielo.png" alt="contaminación">
+        <div class="caption">Tránsito de satélites</div>
+    </div>
+
+</div>
+
+<!-- =================== FILA 2 (NUEVA) =================== -->
+<div class="img-row">
+
+    <div class="img-box">
+        <img src="imagenes/alma.png" alt="alma">
+        <div class="caption">Observatorio astronómico ALMA, Atacama, Chile</div>
+    </div>
+
+    <div class="img-box">
+        <img src="imagenes/altavista.png" alt="altavista">
+        <div class="caption">Observatorio astronómico prehispánico Altavista, Zacatecas, México</div>
+    </div>
+
+</div>
+
+<br><br><br>
+
+</body>
+</html>
+

@@ -1,0 +1,8 @@
+[[Algoritmos]]
+[[Infraestructura]]
+[[Satélite]]
+[[Antenas]]
+[[Domesticación]]
+[[Control]]
+[[Comunicación]]
+[[Oráculo]]

@@ -1,0 +1,5 @@
+[[Mitología]]
+[[Domesticación]]
+[[Paisaje]]
+[[Dominio]]
+[[Antropoceno]]

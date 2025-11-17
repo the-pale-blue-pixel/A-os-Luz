@@ -1,0 +1,7 @@
+[[Tecnología]]
+[[Comunicación]]
+[[Antena]]
+[[Electromagnetismo]]
+[[Dominio]]
+[[Soberanía]]
+[[Satélite]]

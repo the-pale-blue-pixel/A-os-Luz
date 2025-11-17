@@ -1,0 +1,6 @@
+[[Comunicación]]
+[[Mensaje]]
+[[Lenguaje]]
+[[Ruido]]
+[[Glitch]]
+[[Control]]

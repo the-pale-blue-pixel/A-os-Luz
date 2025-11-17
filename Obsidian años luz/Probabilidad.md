@@ -1,0 +1,5 @@
+[[I Ching]]
+[[Algoritmos]]
+[[Predicción]]
+[[Modelado]]
+[[Ruido Gaussiano]]

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiper_Archivo</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            justify-content: left;
+
+        }
+
+        .title {
+        background: yellow;
+        display: inline-block;
+        padding: 8px 20px; /* Aumenté el padding para que se vea mejor */
+        margin-top: 0;
+        font-weight: bold;
+        font-size: 1.4rem;
+
+            
+        }
+
+    p {
+        text-align: justify;
+    }
+        .subtitle {
+        margin: 0;
+        padding: 20px;
+        overflow-x: hidden;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+        }
+
+        .hashtag {
+            margin: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .highlight-tag {
+            background-color: rgb(246, 159, 196);
+        }
+
+        .popup {
+            position: fixed;
+            top: 10%;
+            left: 15%;
+            width: 70%;
+            height: calc(80% - 30px);
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 3px solid black;
+            display: flex;
+            flex-direction: row;
+            color: black;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .popup .left-section {
+            flex: 1;
+            overflow-y: auto;
+            text-align: left;
+            padding-right: 10px;
+            border-right: 2px solid black;
+        }
+
+        .popup .right-section {
+            flex: 1;
+            overflow-y: auto;
+            padding-left: 10px;
+        }
+
+        .popup .hashtag-header {
+            font-size: 20px;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .related-tags {
+            margin-top: 20px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            z-index: 10;
+            margin-right: 15px;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .popup ::-webkit-scrollbar {
+            width: 10px;
+        }
+        .popup ::-webkit-scrollbar-thumb {
+            background-color: black;
+            border-radius: 5px;
+        }
+        .popup ::-webkit-scrollbar-thumb:hover {
+            background-color: white;
+        }
+        .popup ::-webkit-scrollbar-track {
+            background-color: white;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TÍTULO SIN ANIMACIÓN -->
+    <div class="title">Referencias</div>
+
+    <!-- LÍNEA DE TEXTO CORTA -->
+    <div class="subtitle">
+        Archivo general desarrollado durante la cursada. Los tags resaltados en rosa corresponden a las referencias del proyecto Años Luz. Al hacer click en un hashtag, se abre un panel donde, de lado izquierdo aparecen link relacionados al hashtag y del panel derecho los demás hashtags vinculados a la selecicón inicial.
+    </div>
+    <br>
+
+    <script>
+        // Lista de hashtags a resaltar
+        const highlightTags = new Set([
+            '#katiepaterson',
+            '#mishkahenner',
+            '#andrésbelfanti',
+            '#angelashley',
+            '#joriswegner',
+            '#stanislavlem',
+            '#erikdavis',
+            '#bataille',
+            '#vidyakelie',
+            '#elisabalmaceda',
+            '#guadalupeaguirre',
+            '#namjunepaik',
+            '#sam_conrad',
+            '#silvia_tooth',
+            '#yuk_hui',
+            '#cosmismo_ruso',
+            '#daris_rubio',
+            '#Afrodit_Psarra',
+            '#jussi_parikka',
+            '#levi_strauss'
+        ]);
+
+        async function fetchAndParseContent() {
+            try {
+                const response = await fetch('contenido.txt');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const text = await response.text();
+
+                const lines = text.split('\n');
+                const hashtagsSet = new Set();
+                const hashtagMap = {};
+
+                lines.forEach(line => {
+                    const parts = line.split(',');
+                    if (parts.length < 2) return;
+                    const title = parts[0].trim();
+                    const urlAndHashtags = parts.slice(1).join(',').trim();
+                    let url = urlAndHashtags.split(' ')[0].trim();
+
+                    url = url.replace(/,$/, '');
+                    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                        url = 'http://' + url;
+                    }
+
+                    const hashtags = urlAndHashtags.match(/#[^\s]+/g) || [];
+
+                    hashtags.forEach(tag => {
+                        const normalizedTag = tag.toLowerCase();
+                        hashtagsSet.add(normalizedTag);
+                        if (!hashtagMap[normalizedTag]) {
+                            hashtagMap[normalizedTag] = [];
+                        }
+                        hashtagMap[normalizedTag].push({ title, url, hashtags });
+                    });
+                });
+
+                renderHashtags(Array.from(hashtagsSet).sort(), hashtagMap);
+            } catch (error) {
+                console.error('Error fetching or processing contenido.txt:', error);
+            }
+        }
+
+        function renderHashtags(hashtags, hashtagMap) {
+            const fragment = document.createDocumentFragment();
+
+            hashtags.forEach(tag => {
+                const div = document.createElement('div');
+                div.textContent = tag;
+
+                let className = 'hashtag';
+                if (highlightTags.has(tag)) {
+                    className += ' highlight-tag';
+                }
+
+                div.className = className;
+                div.addEventListener('click', () => showPopup(tag, hashtagMap[tag], hashtagMap));
+                fragment.appendChild(div);
+            });
+
+            document.body.appendChild(fragment);
+        }
+
+        function showPopup(tag, items, hashtagMap) {
+            const popup = document.createElement('div');
+            popup.className = 'popup';
+
+            const leftSection = document.createElement('div');
+            leftSection.className = 'left-section';
+
+            const rightSection = document.createElement('div');
+            rightSection.className = 'right-section';
+
+            const hashtagHeader = document.createElement('div');
+            hashtagHeader.className = 'hashtag-header';
+            hashtagHeader.textContent = tag;
+
+            rightSection.appendChild(hashtagHeader);
+
+            function populateLeftSection(selectedTag) {
+                leftSection.innerHTML = '';
+                const currentItems = hashtagMap[selectedTag.toLowerCase()];
+                if (!currentItems) return;
+
+                currentItems.forEach(({ title, url }) => {
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.textContent = title;
+                    link.target = '_blank';
+                    leftSection.appendChild(link);
+                    leftSection.appendChild(document.createElement('br'));
+                });
+            }
+
+            populateLeftSection(tag);
+
+            const uniqueRelatedHashtags = new Set();
+
+            items.forEach(({ hashtags }) => {
+                hashtags.forEach(relatedTag => {
+                    if (relatedTag.toLowerCase() !== tag.toLowerCase()) {
+                        uniqueRelatedHashtags.add(relatedTag);
+                    }
+                });
+            });
+
+            const relatedTagsContainer = document.createElement('div');
+            relatedTagsContainer.className = 'related-tags';
+            Array.from(uniqueRelatedHashtags).sort().forEach(relatedTag => {
+                const relatedTagElement = document.createElement('a');
+                relatedTagElement.textContent = relatedTag;
+                relatedTagElement.href = '#';
+                relatedTagElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    populateLeftSection(relatedTag.toLowerCase());
+                });
+                relatedTagsContainer.appendChild(relatedTagElement);
+                relatedTagsContainer.appendChild(document.createElement('br'));
+            });
+
+            rightSection.appendChild(relatedTagsContainer);
+
+            const closeButton = document.createElement('div');
+            closeButton.textContent = 'X';
+            closeButton.className = 'close-button';
+            closeButton.addEventListener('click', () => popup.remove());
+
+            popup.appendChild(closeButton);
+            popup.appendChild(leftSection);
+            popup.appendChild(rightSection);
+            document.body.appendChild(popup);
+        }
+
+        fetchAndParseContent();
+    </script>
+</body>
+</html>

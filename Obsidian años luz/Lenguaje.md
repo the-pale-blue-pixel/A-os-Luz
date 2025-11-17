@@ -1,0 +1,6 @@
+[[Comunicación]]
+[[Canal]]
+[[Interferencia]]
+[[Domesticación]]
+[[Oráculo]]
+[[Algoritmos]]

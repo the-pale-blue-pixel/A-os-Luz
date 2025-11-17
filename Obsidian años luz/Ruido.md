@@ -1,0 +1,6 @@
+[[Comunicación]]
+[[Canal]]
+[[Interferencia]]
+[[Glitch]]
+[[Ruido Gaussiano]]
+[[Probabilidad]]

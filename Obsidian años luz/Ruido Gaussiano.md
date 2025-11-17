@@ -1,0 +1,6 @@
+[[Probabilidad]]
+[[Ruido]]
+[[Algoritmos]]
+[[Modelado]]
+[[Oráculo]]
+[[Imagen]]

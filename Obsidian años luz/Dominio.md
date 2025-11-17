@@ -1,0 +1,7 @@
+[[Domesticación]]
+[[Naturaleza]]
+[[Algoritmos]]
+[[Control]]
+[[Interferencia]]
+[[Antropoceno]]
+[[Infraestructura]]

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { margin: 0; padding: 0; overflow: hidden; background-color: #1e1e1e; }
+        .node { cursor: pointer; } /* Cambiado a pointer para indicar que es clickeable */
+        .link { stroke: #999; stroke-opacity: 0.6; }
+        text { font-family: Arial, sans-serif; font-size: 12px; pointer-events: none; fill: #fff; }
+        svg { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <div id="graph"></div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+        var nodes = [{"id": "algoritmos.md", "label": "Algoritmos", "link_count": 25, "color": "#7f7f7f"}, {"id": "antenas.md", "label": "Antenas", "link_count": 17, "color": "#7f7f7f"}, {"id": "antropoceno.md", "label": "Antropoceno", "link_count": 11, "color": "#7f7f7f"}, {"id": "archivo.md", "label": "Archivo", "link_count": 13, "color": "#7f7f7f"}, {"id": "años luz.md", "label": "Años luz", "link_count": 2, "color": "#7f7f7f"}, {"id": "canal.md", "label": "Canal", "link_count": 14, "color": "#7f7f7f"}, {"id": "comunicación.md", "label": "Comunicación", "link_count": 23, "color": "#7f7f7f"}, {"id": "control.md", "label": "Control", "link_count": 12, "color": "#7f7f7f"}, {"id": "cosmogonía.md", "label": "Cosmogonía", "link_count": 9, "color": "#7f7f7f"}, {"id": "cosmos.md", "label": "Cosmos", "link_count": 12, "color": "#7f7f7f"}, {"id": "craft.md", "label": "Craft", "link_count": 10, "color": "#7f7f7f"}, {"id": "deep time.md", "label": "Deep time", "link_count": 10, "color": "#7f7f7f"}, {"id": "desplome orbital.md", "label": "Desplome orbital", "link_count": 14, "color": "#7f7f7f"}, {"id": "diseño.md", "label": "Diseño", "link_count": 10, "color": "#7f7f7f"}, {"id": "domesticación.md", "label": "Domesticación", "link_count": 16, "color": "#7f7f7f"}, {"id": "dominio.md", "label": "Dominio", "link_count": 14, "color": "#7f7f7f"}, {"id": "electromagnetismo.md", "label": "Electromagnetismo", "link_count": 15, "color": "#7f7f7f"}, {"id": "emisión.md", "label": "Emisión", "link_count": 14, "color": "#7f7f7f"}, {"id": "estética.md", "label": "Estética", "link_count": 15, "color": "#7f7f7f"}, {"id": "glitch.md", "label": "Glitch", "link_count": 12, "color": "#7f7f7f"}, {"id": "i ching.md", "label": "I ching", "link_count": 10, "color": "#7f7f7f"}, {"id": "imagen.md", "label": "Imagen", "link_count": 12, "color": "#7f7f7f"}, {"id": "informática.md", "label": "Informática", "link_count": 5, "color": "#7f7f7f"}, {"id": "infraestructura.md", "label": "Infraestructura", "link_count": 16, "color": "#7f7f7f"}, {"id": "interferencia.md", "label": "Interferencia", "link_count": 14, "color": "#7f7f7f"}, {"id": "lenguaje.md", "label": "Lenguaje", "link_count": 9, "color": "#7f7f7f"}, {"id": "mensaje.md", "label": "Mensaje", "link_count": 13, "color": "#7f7f7f"}, {"id": "mirar el cielo.md", "label": "Mirar el cielo", "link_count": 17, "color": "#7f7f7f"}, {"id": "mitología.md", "label": "Mitología", "link_count": 14, "color": "#7f7f7f"}, {"id": "modelado.md", "label": "Modelado", "link_count": 13, "color": "#7f7f7f"}, {"id": "naturaleza.md", "label": "Naturaleza", "link_count": 10, "color": "#7f7f7f"}, {"id": "nuevos mitos.md", "label": "Nuevos mitos", "link_count": 16, "color": "#7f7f7f"}, {"id": "nuevos ritos.md", "label": "Nuevos ritos", "link_count": 16, "color": "#7f7f7f"}, {"id": "oráculo.md", "label": "Oráculo", "link_count": 16, "color": "#7f7f7f"}, {"id": "paisaje.md", "label": "Paisaje", "link_count": 8, "color": "#7f7f7f"}, {"id": "predicción.md", "label": "Predicción", "link_count": 12, "color": "#7f7f7f"}, {"id": "probabilidad.md", "label": "Probabilidad", "link_count": 12, "color": "#7f7f7f"}, {"id": "radio.md", "label": "Radio", "link_count": 15, "color": "#7f7f7f"}, {"id": "realidad intervenida.md", "label": "Realidad intervenida", "link_count": 7, "color": "#7f7f7f"}, {"id": "resistencia.md", "label": "Resistencia", "link_count": 6, "color": "#7f7f7f"}, {"id": "rito.md", "label": "Rito", "link_count": 5, "color": "#7f7f7f"}, {"id": "ruido gaussiano.md", "label": "Ruido gaussiano", "link_count": 8, "color": "#7f7f7f"}, {"id": "ruido.md", "label": "Ruido", "link_count": 14, "color": "#7f7f7f"}, {"id": "ruptura.md", "label": "Ruptura", "link_count": 11, "color": "#7f7f7f"}, {"id": "sagrado.md", "label": "Sagrado", "link_count": 12, "color": "#7f7f7f"}, {"id": "satélite.md", "label": "Satélite", "link_count": 19, "color": "#7f7f7f"}, {"id": "simulación.md", "label": "Simulación", "link_count": 7, "color": "#7f7f7f"}, {"id": "soberanía.md", "label": "Soberanía", "link_count": 12, "color": "#7f7f7f"}, {"id": "spacecraft.md", "label": "Spacecraft", "link_count": 12, "color": "#7f7f7f"}, {"id": "tecnología.md", "label": "Tecnología", "link_count": 18, "color": "#7f7f7f"}, {"id": "textil.md", "label": "Textil", "link_count": 7, "color": "#7f7f7f"}, {"id": "tiempo.md", "label": "Tiempo", "link_count": 6, "color": "#7f7f7f"}];
+        var links = [{"source": "algoritmos.md", "target": "i ching.md"}, {"source": "algoritmos.md", "target": "tecnología.md"}, {"source": "algoritmos.md", "target": "modelado.md"}, {"source": "algoritmos.md", "target": "domesticación.md"}, {"source": "algoritmos.md", "target": "control.md"}, {"source": "algoritmos.md", "target": "probabilidad.md"}, {"source": "algoritmos.md", "target": "predicción.md"}, {"source": "algoritmos.md", "target": "informática.md"}, {"source": "algoritmos.md", "target": "diseño.md"}, {"source": "algoritmos.md", "target": "glitch.md"}, {"source": "algoritmos.md", "target": "oráculo.md"}, {"source": "algoritmos.md", "target": "sagrado.md"}, {"source": "antenas.md", "target": "craft.md"}, {"source": "antenas.md", "target": "textil.md"}, {"source": "antenas.md", "target": "canal.md"}, {"source": "antenas.md", "target": "ruido.md"}, {"source": "antenas.md", "target": "soberanía.md"}, {"source": "antenas.md", "target": "comunicación.md"}, {"source": "antenas.md", "target": "infraestructura.md"}, {"source": "antenas.md", "target": "electromagnetismo.md"}, {"source": "antenas.md", "target": "mensaje.md"}, {"source": "antenas.md", "target": "emisión.md"}, {"source": "antenas.md", "target": "radio.md"}, {"source": "antenas.md", "target": "spacecraft.md"}, {"source": "antenas.md", "target": "satélite.md"}, {"source": "antropoceno.md", "target": "naturaleza.md"}, {"source": "antropoceno.md", "target": "dominio.md"}, {"source": "antropoceno.md", "target": "deep time.md"}, {"source": "antropoceno.md", "target": "paisaje.md"}, {"source": "antropoceno.md", "target": "radio.md"}, {"source": "archivo.md", "target": "imagen.md"}, {"source": "archivo.md", "target": "tiempo.md"}, {"source": "archivo.md", "target": "estética.md"}, {"source": "archivo.md", "target": "textil.md"}, {"source": "archivo.md", "target": "ruptura.md"}, {"source": "años luz.md", "target": "mirar el cielo.md"}, {"source": "canal.md", "target": "comunicación.md"}, {"source": "canal.md", "target": "interferencia.md"}, {"source": "canal.md", "target": "lenguaje.md"}, {"source": "canal.md", "target": "emisión.md"}, {"source": "canal.md", "target": "mensaje.md"}, {"source": "canal.md", "target": "radio.md"}, {"source": "canal.md", "target": "ruido.md"}, {"source": "comunicación.md", "target": "canal.md"}, {"source": "comunicación.md", "target": "mensaje.md"}, {"source": "comunicación.md", "target": "interferencia.md"}, {"source": "comunicación.md", "target": "ruido.md"}, {"source": "comunicación.md", "target": "glitch.md"}, {"source": "comunicación.md", "target": "imagen.md"}, {"source": "comunicación.md", "target": "emisión.md"}, {"source": "comunicación.md", "target": "satélite.md"}, {"source": "comunicación.md", "target": "radio.md"}, {"source": "comunicación.md", "target": "tecnología.md"}, {"source": "control.md", "target": "algoritmos.md"}, {"source": "control.md", "target": "dominio.md"}, {"source": "control.md", "target": "interferencia.md"}, {"source": "control.md", "target": "tecnología.md"}, {"source": "control.md", "target": "predicción.md"}, {"source": "control.md", "target": "soberanía.md"}, {"source": "cosmogonía.md", "target": "cosmos.md"}, {"source": "cosmogonía.md", "target": "mitología.md"}, {"source": "cosmogonía.md", "target": "rito.md"}, {"source": "cosmogonía.md", "target": "nuevos mitos.md"}, {"source": "cosmogonía.md", "target": "nuevos ritos.md"}, {"source": "cosmos.md", "target": "mirar el cielo.md"}, {"source": "cosmos.md", "target": "electromagnetismo.md"}, {"source": "cosmos.md", "target": "cosmogonía.md"}, {"source": "cosmos.md", "target": "spacecraft.md"}, {"source": "cosmos.md", "target": "deep time.md"}, {"source": "craft.md", "target": "textil.md"}, {"source": "craft.md", "target": "domesticación.md"}, {"source": "craft.md", "target": "soberanía.md"}, {"source": "craft.md", "target": "resistencia.md"}, {"source": "craft.md", "target": "diseño.md"}, {"source": "deep time.md", "target": "tiempo.md"}, {"source": "deep time.md", "target": "paisaje.md"}, {"source": "deep time.md", "target": "desplome orbital.md"}, {"source": "deep time.md", "target": "dominio.md"}, {"source": "deep time.md", "target": "antropoceno.md"}, {"source": "deep time.md", "target": "cosmos.md"}, {"source": "desplome orbital.md", "target": "satélite.md"}, {"source": "desplome orbital.md", "target": "nuevos ritos.md"}, {"source": "desplome orbital.md", "target": "nuevos mitos.md"}, {"source": "desplome orbital.md", "target": "estética.md"}, {"source": "desplome orbital.md", "target": "tecnología.md"}, {"source": "desplome orbital.md", "target": "mirar el cielo.md"}, {"source": "desplome orbital.md", "target": "mitología.md"}, {"source": "desplome orbital.md", "target": "cosmos.md"}, {"source": "desplome orbital.md", "target": "electromagnetismo.md"}, {"source": "desplome orbital.md", "target": "infraestructura.md"}, {"source": "diseño.md", "target": "estética.md"}, {"source": "diseño.md", "target": "modelado.md"}, {"source": "diseño.md", "target": "realidad intervenida.md"}, {"source": "domesticación.md", "target": "lenguaje.md"}, {"source": "domesticación.md", "target": "infraestructura.md"}, {"source": "domesticación.md", "target": "craft.md"}, {"source": "domesticación.md", "target": "tecnología.md"}, {"source": "domesticación.md", "target": "dominio.md"}, {"source": "domesticación.md", "target": "naturaleza.md"}, {"source": "domesticación.md", "target": "mitología.md"}, {"source": "domesticación.md", "target": "soberanía.md"}, {"source": "domesticación.md", "target": "diseño.md"}, {"source": "dominio.md", "target": "domesticación.md"}, {"source": "dominio.md", "target": "naturaleza.md"}, {"source": "dominio.md", "target": "algoritmos.md"}, {"source": "dominio.md", "target": "control.md"}, {"source": "dominio.md", "target": "interferencia.md"}, {"source": "dominio.md", "target": "antropoceno.md"}, {"source": "dominio.md", "target": "infraestructura.md"}, {"source": "electromagnetismo.md", "target": "cosmos.md"}, {"source": "electromagnetismo.md", "target": "imagen.md"}, {"source": "electromagnetismo.md", "target": "emisión.md"}, {"source": "electromagnetismo.md", "target": "comunicación.md"}, {"source": "electromagnetismo.md", "target": "infraestructura.md"}, {"source": "electromagnetismo.md", "target": "tecnología.md"}, {"source": "electromagnetismo.md", "target": "años luz.md"}, {"source": "emisión.md", "target": "mensaje.md"}, {"source": "emisión.md", "target": "canal.md"}, {"source": "emisión.md", "target": "electromagnetismo.md"}, {"source": "emisión.md", "target": "radio.md"}, {"source": "emisión.md", "target": "antropoceno.md"}, {"source": "estética.md", "target": "imagen.md"}, {"source": "estética.md", "target": "modelado.md"}, {"source": "estética.md", "target": "glitch.md"}, {"source": "estética.md", "target": "nuevos mitos.md"}, {"source": "estética.md", "target": "diseño.md"}, {"source": "glitch.md", "target": "imagen.md"}, {"source": "glitch.md", "target": "comunicación.md"}, {"source": "glitch.md", "target": "estética.md"}, {"source": "glitch.md", "target": "ruptura.md"}, {"source": "glitch.md", "target": "ruido.md"}, {"source": "i ching.md", "target": "algoritmos.md"}, {"source": "i ching.md", "target": "oráculo.md"}, {"source": "i ching.md", "target": "probabilidad.md"}, {"source": "i ching.md", "target": "predicción.md"}, {"source": "i ching.md", "target": "sagrado.md"}, {"source": "i ching.md", "target": "nuevos ritos.md"}, {"source": "imagen.md", "target": "archivo.md"}, {"source": "imagen.md", "target": "mensaje.md"}, {"source": "imagen.md", "target": "estética.md"}, {"source": "imagen.md", "target": "electromagnetismo.md"}, {"source": "informática.md", "target": "algoritmos.md"}, {"source": "informática.md", "target": "modelado.md"}, {"source": "informática.md", "target": "tecnología.md"}, {"source": "infraestructura.md", "target": "tecnología.md"}, {"source": "infraestructura.md", "target": "comunicación.md"}, {"source": "infraestructura.md", "target": "electromagnetismo.md"}, {"source": "infraestructura.md", "target": "dominio.md"}, {"source": "infraestructura.md", "target": "soberanía.md"}, {"source": "infraestructura.md", "target": "satélite.md"}, {"source": "interferencia.md", "target": "comunicación.md"}, {"source": "interferencia.md", "target": "mensaje.md"}, {"source": "interferencia.md", "target": "lenguaje.md"}, {"source": "interferencia.md", "target": "ruido.md"}, {"source": "interferencia.md", "target": "glitch.md"}, {"source": "interferencia.md", "target": "control.md"}, {"source": "lenguaje.md", "target": "comunicación.md"}, {"source": "lenguaje.md", "target": "canal.md"}, {"source": "lenguaje.md", "target": "interferencia.md"}, {"source": "lenguaje.md", "target": "domesticación.md"}, {"source": "lenguaje.md", "target": "oráculo.md"}, {"source": "lenguaje.md", "target": "algoritmos.md"}, {"source": "mensaje.md", "target": "comunicación.md"}, {"source": "mensaje.md", "target": "imagen.md"}, {"source": "mensaje.md", "target": "emisión.md"}, {"source": "mensaje.md", "target": "interferencia.md"}, {"source": "mensaje.md", "target": "canal.md"}, {"source": "mensaje.md", "target": "radio.md"}, {"source": "mirar el cielo.md", "target": "cosmos.md"}, {"source": "mirar el cielo.md", "target": "cosmogonía.md"}, {"source": "mirar el cielo.md", "target": "mitología.md"}, {"source": "mirar el cielo.md", "target": "nuevos ritos.md"}, {"source": "mirar el cielo.md", "target": "nuevos mitos.md"}, {"source": "mirar el cielo.md", "target": "spacecraft.md"}, {"source": "mitología.md", "target": "naturaleza.md"}, {"source": "mitología.md", "target": "sagrado.md"}, {"source": "mitología.md", "target": "nuevos mitos.md"}, {"source": "mitología.md", "target": "mirar el cielo.md"}, {"source": "mitología.md", "target": "oráculo.md"}, {"source": "mitología.md", "target": "cosmogonía.md"}, {"source": "modelado.md", "target": "algoritmos.md"}, {"source": "modelado.md", "target": "estética.md"}, {"source": "modelado.md", "target": "diseño.md"}, {"source": "modelado.md", "target": "probabilidad.md"}, {"source": "modelado.md", "target": "simulación.md"}, {"source": "modelado.md", "target": "informática.md"}, {"source": "naturaleza.md", "target": "mitología.md"}, {"source": "naturaleza.md", "target": "domesticación.md"}, {"source": "naturaleza.md", "target": "paisaje.md"}, {"source": "naturaleza.md", "target": "dominio.md"}, {"source": "naturaleza.md", "target": "antropoceno.md"}, {"source": "nuevos mitos.md", "target": "mitología.md"}, {"source": "nuevos mitos.md", "target": "nuevos ritos.md"}, {"source": "nuevos mitos.md", "target": "desplome orbital.md"}, {"source": "nuevos mitos.md", "target": "estética.md"}, {"source": "nuevos mitos.md", "target": "mirar el cielo.md"}, {"source": "nuevos ritos.md", "target": "mitología.md"}, {"source": "nuevos ritos.md", "target": "nuevos mitos.md"}, {"source": "nuevos ritos.md", "target": "mirar el cielo.md"}, {"source": "nuevos ritos.md", "target": "desplome orbital.md"}, {"source": "nuevos ritos.md", "target": "sagrado.md"}, {"source": "nuevos ritos.md", "target": "oráculo.md"}, {"source": "oráculo.md", "target": "i ching.md"}, {"source": "oráculo.md", "target": "probabilidad.md"}, {"source": "oráculo.md", "target": "predicción.md"}, {"source": "oráculo.md", "target": "algoritmos.md"}, {"source": "oráculo.md", "target": "nuevos ritos.md"}, {"source": "oráculo.md", "target": "sagrado.md"}, {"source": "paisaje.md", "target": "deep time.md"}, {"source": "paisaje.md", "target": "naturaleza.md"}, {"source": "paisaje.md", "target": "cosmos.md"}, {"source": "paisaje.md", "target": "antropoceno.md"}, {"source": "predicción.md", "target": "algoritmos.md"}, {"source": "predicción.md", "target": "probabilidad.md"}, {"source": "predicción.md", "target": "oráculo.md"}, {"source": "predicción.md", "target": "control.md"}, {"source": "predicción.md", "target": "modelado.md"}, {"source": "probabilidad.md", "target": "i ching.md"}, {"source": "probabilidad.md", "target": "algoritmos.md"}, {"source": "probabilidad.md", "target": "predicción.md"}, {"source": "probabilidad.md", "target": "modelado.md"}, {"source": "probabilidad.md", "target": "ruido gaussiano.md"}, {"source": "radio.md", "target": "emisión.md"}, {"source": "radio.md", "target": "canal.md"}, {"source": "radio.md", "target": "comunicación.md"}, {"source": "radio.md", "target": "electromagnetismo.md"}, {"source": "radio.md", "target": "glitch.md"}, {"source": "radio.md", "target": "ruido.md"}, {"source": "radio.md", "target": "infraestructura.md"}, {"source": "radio.md", "target": "mensaje.md"}, {"source": "realidad intervenida.md", "target": "archivo.md"}, {"source": "realidad intervenida.md", "target": "estética.md"}, {"source": "realidad intervenida.md", "target": "nuevos mitos.md"}, {"source": "realidad intervenida.md", "target": "simulación.md"}, {"source": "realidad intervenida.md", "target": "diseño.md"}, {"source": "resistencia.md", "target": "soberanía.md"}, {"source": "resistencia.md", "target": "interferencia.md"}, {"source": "resistencia.md", "target": "ruptura.md"}, {"source": "rito.md", "target": "sagrado.md"}, {"source": "rito.md", "target": "algoritmos.md"}, {"source": "rito.md", "target": "cosmogonía.md"}, {"source": "ruido gaussiano.md", "target": "probabilidad.md"}, {"source": "ruido gaussiano.md", "target": "ruido.md"}, {"source": "ruido gaussiano.md", "target": "algoritmos.md"}, {"source": "ruido gaussiano.md", "target": "modelado.md"}, {"source": "ruido gaussiano.md", "target": "oráculo.md"}, {"source": "ruido gaussiano.md", "target": "imagen.md"}, {"source": "ruido.md", "target": "comunicación.md"}, {"source": "ruido.md", "target": "canal.md"}, {"source": "ruido.md", "target": "interferencia.md"}, {"source": "ruido.md", "target": "glitch.md"}, {"source": "ruido.md", "target": "ruido gaussiano.md"}, {"source": "ruido.md", "target": "probabilidad.md"}, {"source": "ruptura.md", "target": "glitch.md"}, {"source": "ruptura.md", "target": "archivo.md"}, {"source": "ruptura.md", "target": "estética.md"}, {"source": "ruptura.md", "target": "resistencia.md"}, {"source": "ruptura.md", "target": "mirar el cielo.md"}, {"source": "ruptura.md", "target": "nuevos ritos.md"}, {"source": "ruptura.md", "target": "nuevos mitos.md"}, {"source": "sagrado.md", "target": "mitología.md"}, {"source": "sagrado.md", "target": "nuevos ritos.md"}, {"source": "sagrado.md", "target": "oráculo.md"}, {"source": "sagrado.md", "target": "i ching.md"}, {"source": "sagrado.md", "target": "ruptura.md"}, {"source": "sagrado.md", "target": "mirar el cielo.md"}, {"source": "satélite.md", "target": "emisión.md"}, {"source": "satélite.md", "target": "comunicación.md"}, {"source": "satélite.md", "target": "antenas.md"}, {"source": "satélite.md", "target": "spacecraft.md"}, {"source": "satélite.md", "target": "desplome orbital.md"}, {"source": "satélite.md", "target": "ruido.md"}, {"source": "satélite.md", "target": "infraestructura.md"}, {"source": "satélite.md", "target": "mirar el cielo.md"}, {"source": "satélite.md", "target": "nuevos ritos.md"}, {"source": "satélite.md", "target": "nuevos mitos.md"}, {"source": "satélite.md", "target": "oráculo.md"}, {"source": "satélite.md", "target": "predicción.md"}, {"source": "satélite.md", "target": "dominio.md"}, {"source": "simulación.md", "target": "tecnología.md"}, {"source": "simulación.md", "target": "diseño.md"}, {"source": "simulación.md", "target": "algoritmos.md"}, {"source": "simulación.md", "target": "realidad intervenida.md"}, {"source": "simulación.md", "target": "rito.md"}, {"source": "soberanía.md", "target": "antenas.md"}, {"source": "soberanía.md", "target": "infraestructura.md"}, {"source": "soberanía.md", "target": "domesticación.md"}, {"source": "soberanía.md", "target": "control.md"}, {"source": "soberanía.md", "target": "resistencia.md"}, {"source": "soberanía.md", "target": "tecnología.md"}, {"source": "spacecraft.md", "target": "satélite.md"}, {"source": "spacecraft.md", "target": "antenas.md"}, {"source": "spacecraft.md", "target": "emisión.md"}, {"source": "spacecraft.md", "target": "cosmos.md"}, {"source": "spacecraft.md", "target": "mirar el cielo.md"}, {"source": "spacecraft.md", "target": "antropoceno.md"}, {"source": "spacecraft.md", "target": "nuevos ritos.md"}, {"source": "spacecraft.md", "target": "nuevos mitos.md"}, {"source": "tecnología.md", "target": "algoritmos.md"}, {"source": "tecnología.md", "target": "infraestructura.md"}, {"source": "tecnología.md", "target": "satélite.md"}, {"source": "tecnología.md", "target": "antenas.md"}, {"source": "tecnología.md", "target": "domesticación.md"}, {"source": "tecnología.md", "target": "control.md"}, {"source": "tecnología.md", "target": "comunicación.md"}, {"source": "tecnología.md", "target": "oráculo.md"}, {"source": "textil.md", "target": "craft.md"}, {"source": "textil.md", "target": "archivo.md"}, {"source": "textil.md", "target": "comunicación.md"}, {"source": "tiempo.md", "target": "deep time.md"}, {"source": "tiempo.md", "target": "archivo.md"}, {"source": "tiempo.md", "target": "predicción.md"}, {"source": "tiempo.md", "target": "paisaje.md"}];
+        var colorGroups = [];
+
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+
+        var svg = d3.select("#graph")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        var g = svg.append("g");
+
+        var zoom = d3.zoom()
+            .scaleExtent([0.1, 4])
+            .on("zoom", zoomed);
+
+        svg.call(zoom);
+
+        function zoomed() {
+            g.attr("transform", d3.event.transform);
+        }
+
+        function customForce(alpha) {
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const strength = 0.05;
+
+            for (let i = 0; i < nodes.length; i++) {
+                const node = nodes[i];
+                node.vx += (centerX - node.x) * strength * alpha;
+                node.vy += (centerY - node.y) * strength * alpha;
+            }
+        }
+        
+        // --- INICIO DE MODIFICACIÓN PARA RESALTADO ---
+
+        var linkedByIndex = {};
+        links.forEach(function(d) {
+            // Asegúrate de que los nodos se hayan indexado antes de usar .index
+            if (typeof d.source === 'object' && typeof d.target === 'object') {
+                linkedByIndex[d.source.index + "," + d.target.index] = 1;
+            }
+        });
+
+        // Función para verificar si dos nodos están conectados
+        function isConnected(a, b) {
+            return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index === b.index;
+        }
+
+        var selectedNode = null; // Variable para rastrear el nodo seleccionado
+
+        function clickNode(d) {
+            // 1. Deseleccionar si el nodo ya estaba seleccionado (toggle)
+            if (selectedNode === d) {
+                selectedNode = null;
+                // Restablecer estilos a todos los nodos, enlaces y textos.
+                node.attr("fill", n => n.color).style("opacity", 1);
+                text.attr("fill", "#fff").style("opacity", 1);
+                link.style("stroke", "#999").style("opacity", 0.6);
+                return;
+            }
+
+            // 2. Establecer el nuevo nodo seleccionado
+            selectedNode = d;
+            
+            // 3. Resaltar
+            
+            // a. Resaltar Nodos y Textos
+            node.attr("fill", n => {
+                // Si está conectado (o es el nodo mismo), amarillo. Si no, su color original.
+                return isConnected(d, n) ? "yellow" : n.color;
+            }).style("opacity", n => isConnected(d, n) ? 1 : 0.2); // Atenuar nodos no conectados
+
+            text.attr("fill", n => isConnected(d, n) ? "yellow" : "#fff") // Texto en amarillo para conectados
+                .style("opacity", n => isConnected(d, n) ? 1 : 0.2);
+
+            // b. Resaltar Enlaces
+            link.style("stroke", l => {
+                // Resaltar enlaces solo si conectan el nodo seleccionado con sus vecinos
+                if (l.source === d || l.target === d) {
+                    return "yellow"; // Enlaces conectados en amarillo
+                } else {
+                    return "#999";
+                }
+            }).style("opacity", l => {
+                // Mostrar solo los enlaces conectados directamente al nodo seleccionado
+                return (l.source === d || l.target === d) ? 1 : 0.1;
+            });
+        }
+        
+        // --- FIN DE MODIFICACIÓN PARA RESALTADO ---
+
+        var simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.id).distance(d => {
+                const sourceLinks = links.filter(link => link.source.id === d.source.id || link.target.id === d.source.id).length;
+                const targetLinks = links.filter(link => link.source.id === d.target.id || link.target.id === d.target.id).length;
+                return Math.min(150, Math.max(50, (sourceLinks + targetLinks) * 10));
+            }))
+            .force("charge", d3.forceManyBody().strength(-300))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force("custom", customForce)
+            .force("collision", labelCollision())
+            .alphaDecay(0.02)
+            .alphaMin(0.001)
+            .on("tick", ticked);
+            
+        // **IMPORTANTE:** D3 asigna los índices y resuelve 'source'/'target' en la simulación. 
+        // Para que `linkedByIndex` funcione correctamente, movemos su inicialización aquí 
+        // o la ejecutamos al inicio de la simulación. La coloqué antes de la simulación.
+
+        var link = g.append("g")
+            .attr("class", "links")
+            .selectAll("line")
+            .data(links)
+            .enter().append("line")
+            .attr("class", "link");
+
+        var node = g.append("g")
+            .attr("class", "nodes")
+            .selectAll("circle")
+            .data(nodes)
+            .enter().append("circle")
+            .attr("class", "node")
+            .attr("r", function(d) {
+                var radius = 5 + Math.sqrt(d.link_count);
+                return radius;
+            })
+            .attr("fill", function(d) {
+                return d.color;
+            })
+            .call(d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended))
+            // APLICACIÓN DEL MANEJADOR DE CLIC
+            .on("click", clickNode); 
+
+        var text = g.append("g")
+            .attr("class", "texts")
+            .selectAll("text")
+            .data(nodes)
+            .enter().append("text")
+            .attr("x", 8)
+            .attr("y", ".31em")
+            .text(d => d.label);
+
+        function ticked() {
+            link
+                .attr("x1", d => d.source.x)
+                .attr("y1", d => d.source.y)
+                .attr("x2", d => d.target.x)
+                .attr("y2", d => d.target.y);
+
+            node
+                .attr("cx", d => d.x)
+                .attr("cy", d => d.y);
+
+            text
+                .attr("x", d => d.x + 8)
+                .attr("y", d => d.y + 3);
+        }
+
+        function dragstarted(d) {
+            if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(d) {
+            d.fx = d3.event.x;
+            d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+            if (!d3.event.active) simulation.alphaTarget(0);
+            d.fx = null;
+            d.fy = null;
+        }
+
+        function labelCollision() {
+            var alpha = 0.5;
+            return function() {
+                for (var i = 0; i < nodes.length; i++) {
+                    for (var j = i + 1; j < nodes.length; j++) {
+                        var nodeA = nodes[i];
+                        var nodeB = nodes[j];
+                        if (nodeA === nodeB) continue;
+
+                        var dx = nodeA.x - nodeB.x;
+                        var dy = nodeA.y - nodeB.y;
+                        var distance = Math.sqrt(dx * dx + dy * dy);
+                        var minDistance = 20;
+
+                        if (distance < minDistance) {
+                            var moveFactor = (minDistance - distance) / distance * alpha;
+                            var mx = dx * moveFactor;
+                            var my = dy * moveFactor;
+                            nodeA.x += mx;
+                            nodeA.y += my;
+                            nodeB.x -= mx;
+                            nodeB.y -= my;
+                        }
+                    }
+                }
+            };
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Objetivos</title>
+
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            text-align: left; /* Alineación por defecto */
+        }
+
+        /* Contenedor que simula la columna para forzar la justificación */
+        .content-column {
+            max-width: 450px; /* Simula un ancho de columna estrecho (ej. span="3") */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo del título principal (Objetivos) */
+        h2 {
+            background: yellow;
+            display: inline-block;
+            padding: 4px 8px;
+            margin-top: 0;
+            margin-bottom: 25px; 
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+        
+        /* Estilo para los títulos de sección (Objetivo General / Específicos) */
+        h3 {
+            font-size: 14px; 
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            line-height: 1.5;
+            text-align: justify; /* Asegura la justificación en el encabezado si tiene varias líneas */
+        }
+
+        /* Estilo para cada punto de objetivo */
+        .objective-item {
+            margin-bottom: 12px;
+            text-align: justify; /* Justificación aplicada aquí */
+            padding-left: 0;
+            text-indent: -10px; /* Ajuste para alinear la viñeta a la izquierda */
+            padding-left: 10px; /* Espacio para que el texto justificado no se pegue al borde */
+        }
+        
+        /* Estilo para el ícono de viñeta (⚹) */
+        .objective-item .bullet {
+            font-weight: bold;
+            margin-right: 5px;
+            text-indent: 0;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Envolvemos todo el contenido en un div para simular el ancho de la columna -->
+    <div class="content-column">
+        
+        <!-- TÍTULO PRINCIPAL -->
+        <h2>Objetivos</h2>
+
+        <!-- OBJETIVO GENERAL -->
+        <h3>Objetivo General:</h3>
+        <!-- Texto sin <br> para que la justificación funcione -->
+        <p class="objective-item">
+            <span class="bullet">⚹</span> Desarrollar mi investigación teórico-plástica de tesis “Años Luz” en torno al cruce entre cosmogonías y tecnologías aeroespaciales.
+        </p>
+
+        <!-- OBJETIVOS ESPECÍFICOS -->
+        <h3>Objetivos Específicos:</h3>
+        
+        <p class="objective-item">
+            <span class="bullet">⚹</span> Investigar las transformaciones tecnológicas, simbólicas y culturales vinculadas a la expansión de la infraestructura aeroespacial y sus efectos sobre nuestra percepción del cielo y del territorio en contraste con cosmogonías preoccidentales.
+        </p>
+
+        <!-- Segundo objetivo sin <br> para que fluya y se justifique -->
+        <p class="objective-item">
+            <span class="bullet">⚹</span> Desarrollar a través de realidad virtual, instalación y textil un cuerpo de obra que me permita abordar de manera plástica el desarrollo teórico de la investigación.
+        </p>
+
+        <p class="objective-item">
+            <span class="bullet">⚹</span> Vincularme con espacios específicos que me permitan, no solo desarrollar mi investigación sino una futura colaboración.
+        </p>
+
+        <p class="objective-item">
+            <span class="bullet">⚹</span> Establecer un diálogo simbólico entre dos observatorios astronómicos separados por una civilización, pero unidos por sus afinidades biogeográficas.
+        </p>
+    </div>
+
+</body>
+</html>

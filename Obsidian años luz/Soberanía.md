@@ -1,0 +1,6 @@
+[[Antenas]]
+[[Infraestructura]]
+[[Domesticación]]
+[[Control]]
+[[Resistencia]]
+[[Tecnología]]

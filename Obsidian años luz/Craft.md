@@ -1,0 +1,7 @@
+[[Antena]]
+[[Textil]]
+[[Domesticación]]
+[[Técnica]]
+[[Soberanía]]
+[[Resistencia]]
+[[Diseño]]

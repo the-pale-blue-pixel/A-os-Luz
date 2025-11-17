@@ -1,0 +1,6 @@
+[[Algoritmos]]
+[[Dominio]]
+[[Interferencia]]
+[[Tecnología]]
+[[Predicción]]
+[[Soberanía]]

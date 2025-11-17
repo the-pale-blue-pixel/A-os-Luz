@@ -1,0 +1,8 @@
+[[Imagen]]
+[[Tiempo]]
+[[Años Luz/Cartografías sensibles/Realidad Intervenida/Realidad Intervenida]]
+[[Estética]]
+[[Textil]]
+[[Memoria]]
+[[Registro]]
+[[Ruptura]]

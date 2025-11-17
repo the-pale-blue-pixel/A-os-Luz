@@ -1,0 +1,6 @@
+[[Algoritmos]]
+[[Oráculo]]
+[[Probabilidad]]
+[[Predicción]]
+[[Sagrado]]
+[[Nuevos Ritos]]

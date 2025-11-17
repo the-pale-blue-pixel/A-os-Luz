@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Introducción</title>
+
+<style>
+    /* --- ESTILO NUEVO BASADO EN TU EJEMPLO --- */
+    body {
+        margin: 0;
+        padding: 20px;
+        overflow-x: hidden;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+
+    }
+
+    h2 {
+        background: yellow;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-top: 0;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    /* --- TÍTULO DE LA CUENTA REGRESIVA --- */
+    #countdown-title {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+    }
+
+    /* --- CUENTA REGRESIVA (NO MODIFICADA) --- */
+    #countdown {
+        font-size: 14px;
+        margin: 12px 0 25px 0;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+
+    /* --- IMÁGENES (NO MODIFICADO) --- */
+    .img-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .img-box {
+        text-align: right;
+        width: 45%;
+    }
+
+    .img-box img {
+        width: 100%;
+        border-radius: 6px;
+        display: block;
+    }
+
+    .caption {
+        font-size: 0.85rem;
+        font-style: italic;
+        margin-top: 8px;
+        text-align: right;
+    }
+
+    @media (max-width: 980px) {
+        body { padding: 20px; max-width: none; }
+        .img-row { flex-direction: column; gap: 12px; }
+        .img-box { width: 100%; text-align: center; }
+        .caption { text-align: center; }
+    }
+</style>
+</head>
+
+<body>
+
+<h2 style="background: rgb(255, 255, 0); display: inline-block; margin-top: 0;">Introducción</h2>
+<br>
+
+<p>
+Los relatos del cielo ocupan un lugar relevante en mi historia familiar, marcada por dos acontecimientos importantes: el paso del cometa Halley y el eclipse solar de 1992. Aunque nací después del primero y no conservo memoria del segundo, la figura de mi abuelo hizo que ambos adquirieran un peso formativo en mi infancia. Esta relación volvió a hacerse presente en 2024, cuando observé, aunque a distancia, el entusiasmo colectivo de mis amigos en México durante el eclipse solar, un episodio que reactivó ese vínculo temprano con los fenómenos celestes.
+</p>
+
+<p>
+El cometa Halley introduce, además, una dimensión temporal significativa. Su ciclo de 74 a 76 años supera en numerosos contextos la esperanza de vida humana, lo que lo convierte en un acontecimiento que no todas las generaciones pueden presenciar. En 1986, mi abuelo lo observó; en 2061 ocurrirá su siguiente retorno. Mi interés reside precisamente en la magnitud de esta temporalidad y en la posibilidad, al igual que mi abuelo, de lograr una observación directa de este fenómeno de largo ciclo, para lo cual tendría que vivir al día de hoy, 16 de noviembre de 2025, vivir exáctamente los mismos años que he vivido hasta el día de hoy.
+</p>
+
+<!-- TÍTULO DE LA CUENTA REGRESIVA (centrado) -->
+<div id="countdown-title">Cuenta regresiva para el retorno del cometa Halley</div>
+
+<!-- CUENTA REGRESIVA -->
+<div id="countdown">Cargando cuenta regresiva...</div>
+
+<script>
+    function updateCountdown() {
+        // Fecha objetivo: 28 julio 2061 (00:00:00)
+        const target = new Date("2061-07-28T00:00:00Z"); // UTC para consistencia
+
+        const now = new Date();
+        let diff = target - now;
+
+        if (diff < 0) {
+            document.getElementById("countdown").innerText = "El cometa Halley ya ha pasado.";
+            return;
+        }
+
+        // Años aproximados (usando 365.25 días para años bisiestos)
+        const msPerYear = 1000 * 60 * 60 * 24 * 365.25;
+        const years = Math.floor(diff / msPerYear);
+        diff -= years * msPerYear;
+
+        const msPerDay = 1000 * 60 * 60 * 24;
+        const days = Math.floor(diff / msPerDay);
+        diff -= days * msPerDay;
+
+        const msPerMinute = 1000 * 60;
+        const minutes = Math.floor(diff / msPerMinute);
+        diff -= minutes * msPerMinute;
+
+        const seconds = Math.floor(diff / 1000);
+
+        document.getElementById("countdown").innerText =
+            `${years}Años - ${days}Días - ${minutes}Min - ${seconds}Seg`;
+    }
+
+    // Actualiza cada segundo
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>
+
+<!-- CONTINÚA TEXTO -->
+<p>
+Antes de la expansión de la iluminación artificial y de la consolidación del modelo científico occidental, los cometas y otros eventos celestes tenían un papel social y ritual fundamental. En la cultura mexica, por ejemplo, el <i>citlalin popoca</i> (estrella que humea) fue interpretado como presagio de la caída de Moctezuma (Sahagún 1500). Este tipo de fenómenos repentinos no eran percibidos como anomalías menores, sino como mensajes que intervenían en el orden político y simbólico.
+</p>
+
+<p>
+Incluso en sociedades con astronomías institucionalizadas, estas interpretaciones seguían atravesadas por estructuras de poder. En China, en el año 1006, el astrónomo imperial Chou K’o-ming modificó la lectura de la supernova SN 1006, temida inicialmente como presagio negativo, para declararla un signo de virtud imperial, con el fin de estabilizar al pueblo y obtener un ascenso (Hockey 1917). Este caso evidencia cómo la interpretación del cielo ha estado históricamente mediada por intereses políticos y epistemológicos.
+</p>
+
+<p>
+Hoy, el cielo ya no es patrimonio de mitologías ni cosmogonías: es un espacio administrado por redes de datos, satélites, sensores y algoritmos. Sin embargo, esta transición no implica la eliminación de su carga simbólica. La tecnología contemporánea no sustituye del todo la dimensión mítica, sino que la reconfigura: produce nuevas formas de misticismo, nuevas espiritualidades de la información y una imaginería donde lo técnico y lo esotérico coexisten (Dabis 1998). En este sentido, las infraestructuras espaciales operan hoy como dispositivos que continúan generando imaginarios, rituales seculares y narrativas sobre el destino, la trascendencia o lo inalcanzable.
+</p>
+
+<p>
+Esta tensión entre ciencia, mito y tecnología también aparece en el cosmismo ruso, un movimiento filosófico-científico de finales del siglo XIX y principios del XX. Pensadores como Nikolái Fiódorov, Konstantín Tsiolkovski y más tarde algunos integrantes del Instituto Ruso de Cultura Proletaria concibieron la exploración espacial como un proyecto ético y espiritual: la expansión hacia el cosmos, la inmortalidad tecnológica y la resurrección futura de la humanidad mediante medios científicos eran, para ellos, metas inseparables.
+</p>
+
+<p>
+Ejemplos contemporáneos muestran cómo estas lógicas persisten. El proyecto soviético Soyuz, que intentó instalar espejos orbitales para redirigir luz solar hacia la Tierra, puede leerse como heredero directo de la imaginación cosmista (Parikka 2021). Aunque el experimento fracasó, iniciativas actuales de empresas privadas como Reflect Orbital retoman la idea y ofrecen la posibilidad de “adquirir” horas de luz nocturna sobre un territorio. Asimismo, los desplomes satelitales, que van en aumento —y específicamente los de la empresa Starlink— hoy en día son anunciados públicamente, incluso transmitidos emulando eventos lumínicos como la observación de cometas.
+</p>
+
+<!-- IMÁGENES -->
+<div class="img-row">
+    <div class="img-box">
+        <img src="imagenes/satelite_cayendo.png" alt="Tiangong I">
+        <div class="caption">Desplome de la estación china Tiangong I</div>
+    </div>
+
+    <div class="img-box">
+        <img src="imagenes/satelite_cayendo2.png" alt="Starlink">
+        <div class="caption">Desplome de satélite Starlink</div>
+    </div><br>
+</div>
+<br>
+
+<p>
+En la actualidad, el cielo se configura como un territorio hipermediado por tecnologías de comunicación, observación y exploración. La tecnología aeroespaciaI opera como un filtros que determina lo visible y lo inteligible. Esta mediación no elimina la dimensión simbólica del cosmos; por el contrario, reconfigura su estatuto. La esfera tecnológica continúa produciendo formas residuales de pensamiento mítico, recordándonos que la racionalidad instrumental convive con imaginarios que exceden su propio marco explicativo (Davis, 2021). En este sentido, fenómenos como los desplomes orbitales de satélites, la esfera residual de basúra aeroespacial o el próximo agotamiento del Voyager I adquieren una potencia narrativa que puede leerse en la clave de lo sagrado entendido, como aquello que emerge en los límites de lo utilitario, allí donde lo técnico se desborda y convoca otras formas de relación con el mundo (Bataille,  2009).
+</p>
+
+<p>
+Esta perspectiva se sostiene en una territorialidad  situando la investigación en dos espacios donde la observación del cielo ha tenido funciones radicalmente distintas: el observatorio ALMA en el desierto de Atacama y el sitio arqueoastronómico de Altavista en Zacatecas. Ambos lugares atravesados por los trópicos de Capricornio y Cáncer, respectivamente, permiten pensar la distancia temporal y conceptual entre la mirada contemporánea, altamente tecnificada, y las formas de relación con el cielo desarrolladas por sociedades preoccidentales en general. Más que contrastarlas directamente, la obra atiende a la tensión que surge entre estos modos de ver: uno atravesado por redes de datos e instrumentación avanzada, y otro en el que el cielo operaba como marco cosmológico, social y ritual. En este cruce, Años Luz se propone explorar cómo estas capas históricas y epistemológicas continúan modelando nuestra percepción del cosmos y las narrativas que producimos sobre él.
+</p><br><br>
+
+</body>
+</html>

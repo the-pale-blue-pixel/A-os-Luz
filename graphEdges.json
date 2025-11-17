@@ -1,0 +1,1246 @@
+[
+  {
+    "From": "Algoritmos",
+    "To": "I Ching"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Modelado"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Domesticación"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Control"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Probabilidad"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Predicción"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Informática"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Diseño"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Glitch"
+  },
+  {
+    "From": "Algoritmos",
+    "To": "Oráculo"
+  },
+  {
+    "From": "Antenas",
+    "To": "Craft"
+  },
+  {
+    "From": "Antenas",
+    "To": "Textil"
+  },
+  {
+    "From": "Antenas",
+    "To": "Canal"
+  },
+  {
+    "From": "Antenas",
+    "To": "Ruido"
+  },
+  {
+    "From": "Antenas",
+    "To": "Soberanía"
+  },
+  {
+    "From": "Antenas",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Antenas",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Antenas",
+    "To": "Electromagnetismo"
+  },
+  {
+    "From": "Antenas",
+    "To": "Mensaje"
+  },
+  {
+    "From": "Antenas",
+    "To": "Emisión"
+  },
+  {
+    "From": "Antenas",
+    "To": "Radio"
+  },
+  {
+    "From": "Antenas",
+    "To": "Spacecraft"
+  },
+  {
+    "From": "Antenas",
+    "To": "Satélite"
+  },
+  {
+    "From": "Archivo",
+    "To": "Imagen"
+  },
+  {
+    "From": "Archivo",
+    "To": "Tiempo"
+  },
+  {
+    "From": "Archivo",
+    "To": "Realidad Intervenida"
+  },
+  {
+    "From": "Archivo",
+    "To": "Estética"
+  },
+  {
+    "From": "Archivo",
+    "To": "Textil"
+  },
+  {
+    "From": "Archivo",
+    "To": "Memoria"
+  },
+  {
+    "From": "Archivo",
+    "To": "Registro"
+  },
+  {
+    "From": "Archivo",
+    "To": "Ruptura"
+  },
+  {
+    "From": "Canal",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Canal",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Canal",
+    "To": "Lenguaje"
+  },
+  {
+    "From": "Canal",
+    "To": "Emisión"
+  },
+  {
+    "From": "Canal",
+    "To": "Mensaje"
+  },
+  {
+    "From": "Canal",
+    "To": "Radio"
+  },
+  {
+    "From": "Canal",
+    "To": "Ruido"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Canal"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Mensaje"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Ruido"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Glitch"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Imagen"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Emisión"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Satélite"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Radio"
+  },
+  {
+    "From": "Comunicación",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Craft",
+    "To": "Antena"
+  },
+  {
+    "From": "Craft",
+    "To": "Textil"
+  },
+  {
+    "From": "Craft",
+    "To": "Domesticación"
+  },
+  {
+    "From": "Craft",
+    "To": "Técnica"
+  },
+  {
+    "From": "Craft",
+    "To": "Soberanía"
+  },
+  {
+    "From": "Craft",
+    "To": "Resistencia"
+  },
+  {
+    "From": "Craft",
+    "To": "Diseño"
+  },
+  {
+    "From": "Deep Time",
+    "To": "Tiempo"
+  },
+  {
+    "From": "Deep Time",
+    "To": "Paisaje"
+  },
+  {
+    "From": "Deep Time",
+    "To": "Desplome Orbital"
+  },
+  {
+    "From": "Deep Time",
+    "To": "Dominio"
+  },
+  {
+    "From": "Deep Time",
+    "To": "Antropoceno"
+  },
+  {
+    "From": "Deep Time",
+    "To": "Cosmos"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Satélite"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Nuevos Ritos"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Nuevos Mitos"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Estética"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Mirar el cielo"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Mitología"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Cosmos"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Electromagnetismo"
+  },
+  {
+    "From": "Desplome Orbital",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Lenguaje"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Craft"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Dominio"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Naturaleza"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Mitología"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Soberanía"
+  },
+  {
+    "From": "Domesticación",
+    "To": "Diseño"
+  },
+  {
+    "From": "Dominio",
+    "To": "Domesticación"
+  },
+  {
+    "From": "Dominio",
+    "To": "Naturaleza"
+  },
+  {
+    "From": "Dominio",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Dominio",
+    "To": "Control"
+  },
+  {
+    "From": "Dominio",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Dominio",
+    "To": "Antropoceno"
+  },
+  {
+    "From": "Dominio",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Estética",
+    "To": "Imagen"
+  },
+  {
+    "From": "Estética",
+    "To": "Modelado"
+  },
+  {
+    "From": "Estética",
+    "To": "Glitch"
+  },
+  {
+    "From": "Estética",
+    "To": "Realidad Intervenida"
+  },
+  {
+    "From": "Estética",
+    "To": "Nuevos Mitos"
+  },
+  {
+    "From": "Estética",
+    "To": "Diseño"
+  },
+  {
+    "From": "Imagen",
+    "To": "Glitch"
+  },
+  {
+    "From": "Imagen",
+    "To": "Archivo"
+  },
+  {
+    "From": "Imagen",
+    "To": "Mensaje"
+  },
+  {
+    "From": "Imagen",
+    "To": "Estética"
+  },
+  {
+    "From": "Imagen",
+    "To": "Electromagnetismo"
+  },
+  {
+    "From": "Imagen",
+    "To": "Realidad Intervenida"
+  },
+  {
+    "From": "Infraestructura",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Infraestructura",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Infraestructura",
+    "To": "Antena"
+  },
+  {
+    "From": "Infraestructura",
+    "To": "Electromagnetismo"
+  },
+  {
+    "From": "Infraestructura",
+    "To": "Dominio"
+  },
+  {
+    "From": "Infraestructura",
+    "To": "Soberanía"
+  },
+  {
+    "From": "Infraestructura",
+    "To": "Satélite"
+  },
+  {
+    "From": "Interferencia",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Interferencia",
+    "To": "Mensaje"
+  },
+  {
+    "From": "Interferencia",
+    "To": "Lenguaje"
+  },
+  {
+    "From": "Interferencia",
+    "To": "Ruido"
+  },
+  {
+    "From": "Interferencia",
+    "To": "Glitch"
+  },
+  {
+    "From": "Interferencia",
+    "To": "Control"
+  },
+  {
+    "From": "Mirar el Cielo",
+    "To": "Cosmos"
+  },
+  {
+    "From": "Mirar el Cielo",
+    "To": "Cosmogonía"
+  },
+  {
+    "From": "Mirar el Cielo",
+    "To": "Mitología"
+  },
+  {
+    "From": "Mirar el Cielo",
+    "To": "Nuevos Ritos"
+  },
+  {
+    "From": "Mirar el Cielo",
+    "To": "Nuevos Mitos"
+  },
+  {
+    "From": "Mirar el Cielo",
+    "To": "Desplomes Orbitales"
+  },
+  {
+    "From": "Mirar el Cielo",
+    "To": "Spacecraft"
+  },
+  {
+    "From": "Mitología",
+    "To": "Naturaleza"
+  },
+  {
+    "From": "Mitología",
+    "To": "Sagrado"
+  },
+  {
+    "From": "Mitología",
+    "To": "Nuevos Mitos"
+  },
+  {
+    "From": "Mitología",
+    "To": "Mirar el cielo"
+  },
+  {
+    "From": "Mitología",
+    "To": "Oráculo"
+  },
+  {
+    "From": "Mitología",
+    "To": "Cosmogonía"
+  },
+  {
+    "From": "Modelado",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Modelado",
+    "To": "Estética"
+  },
+  {
+    "From": "Modelado",
+    "To": "Diseño"
+  },
+  {
+    "From": "Modelado",
+    "To": "Probabilidad"
+  },
+  {
+    "From": "Modelado",
+    "To": "Simulación"
+  },
+  {
+    "From": "Modelado",
+    "To": "Informática"
+  },
+  {
+    "From": "Nuevos Mitos",
+    "To": "Mitología"
+  },
+  {
+    "From": "Nuevos Mitos",
+    "To": "Nuevos Ritos"
+  },
+  {
+    "From": "Nuevos Mitos",
+    "To": "Desplome Orbital"
+  },
+  {
+    "From": "Nuevos Mitos",
+    "To": "Realidad Intervenida"
+  },
+  {
+    "From": "Nuevos Mitos",
+    "To": "Estética"
+  },
+  {
+    "From": "Nuevos Mitos",
+    "To": "Mirar el cielo"
+  },
+  {
+    "From": "Nuevos Ritos",
+    "To": "Mitología"
+  },
+  {
+    "From": "Nuevos Ritos",
+    "To": "Nuevos Mitos"
+  },
+  {
+    "From": "Nuevos Ritos",
+    "To": "Mirar el cielo"
+  },
+  {
+    "From": "Nuevos Ritos",
+    "To": "Desplome Orbital"
+  },
+  {
+    "From": "Nuevos Ritos",
+    "To": "Sagrado"
+  },
+  {
+    "From": "Nuevos Ritos",
+    "To": "Oráculo"
+  },
+  {
+    "From": "Oráculo",
+    "To": "I Ching"
+  },
+  {
+    "From": "Oráculo",
+    "To": "Probabilidad"
+  },
+  {
+    "From": "Oráculo",
+    "To": "Predicción"
+  },
+  {
+    "From": "Oráculo",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Oráculo",
+    "To": "Nuevos Ritos"
+  },
+  {
+    "From": "Oráculo",
+    "To": "Sagrado"
+  },
+  {
+    "From": "Predicción",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Predicción",
+    "To": "Probabilidad"
+  },
+  {
+    "From": "Predicción",
+    "To": "Oráculo"
+  },
+  {
+    "From": "Predicción",
+    "To": "Control"
+  },
+  {
+    "From": "Predicción",
+    "To": "Modelado"
+  },
+  {
+    "From": "Probabilidad",
+    "To": "I Ching"
+  },
+  {
+    "From": "Probabilidad",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Probabilidad",
+    "To": "Predicción"
+  },
+  {
+    "From": "Probabilidad",
+    "To": "Modelado"
+  },
+  {
+    "From": "Probabilidad",
+    "To": "Ruido Gaussiano"
+  },
+  {
+    "From": "Control",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Control",
+    "To": "Dominio"
+  },
+  {
+    "From": "Control",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Control",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Control",
+    "To": "Predicción"
+  },
+  {
+    "From": "Control",
+    "To": "Soberanía"
+  },
+  {
+    "From": "Realidad Intervenida",
+    "To": "Imagen"
+  },
+  {
+    "From": "Realidad Intervenida",
+    "To": "Archivo"
+  },
+  {
+    "From": "Realidad Intervenida",
+    "To": "Estética"
+  },
+  {
+    "From": "Realidad Intervenida",
+    "To": "Nuevos Mitos"
+  },
+  {
+    "From": "Realidad Intervenida",
+    "To": "Simulación"
+  },
+  {
+    "From": "Realidad Intervenida",
+    "To": "Diseño"
+  },
+  {
+    "From": "Resistencia",
+    "To": "Craft"
+  },
+  {
+    "From": "Resistencia",
+    "To": "Soberanía"
+  },
+  {
+    "From": "Resistencia",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Resistencia",
+    "To": "Ruptura"
+  },
+  {
+    "From": "Ruido",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Ruido",
+    "To": "Canal"
+  },
+  {
+    "From": "Ruido",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Ruido",
+    "To": "Glitch"
+  },
+  {
+    "From": "Ruido",
+    "To": "Ruido Gaussiano"
+  },
+  {
+    "From": "Ruido",
+    "To": "Probabilidad"
+  },
+  {
+    "From": "Ruptura",
+    "To": "Glitch"
+  },
+  {
+    "From": "Ruptura",
+    "To": "Archivo"
+  },
+  {
+    "From": "Ruptura",
+    "To": "Estética"
+  },
+  {
+    "From": "Ruptura",
+    "To": "Resistencia"
+  },
+  {
+    "From": "Soberanía",
+    "To": "Antenas"
+  },
+  {
+    "From": "Soberanía",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Soberanía",
+    "To": "Domesticación"
+  },
+  {
+    "From": "Soberanía",
+    "To": "Control"
+  },
+  {
+    "From": "Soberanía",
+    "To": "Resistencia"
+  },
+  {
+    "From": "Soberanía",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Sagrado",
+    "To": "Mitología"
+  },
+  {
+    "From": "Sagrado",
+    "To": "Nuevos Ritos"
+  },
+  {
+    "From": "Sagrado",
+    "To": "Oráculo"
+  },
+  {
+    "From": "Sagrado",
+    "To": "I Ching"
+  },
+  {
+    "From": "Sagrado",
+    "To": "Ruptura"
+  },
+  {
+    "From": "Tiempo",
+    "To": "Deep Time"
+  },
+  {
+    "From": "Tiempo",
+    "To": "Archivo"
+  },
+  {
+    "From": "Tiempo",
+    "To": "Predicción"
+  },
+  {
+    "From": "Tiempo",
+    "To": "Paisaje"
+  },
+  {
+    "From": "Paisaje",
+    "To": "Deep Time"
+  },
+  {
+    "From": "Paisaje",
+    "To": "Naturaleza"
+  },
+  {
+    "From": "Paisaje",
+    "To": "Cosmos"
+  },
+  {
+    "From": "Paisaje",
+    "To": "Antropoceno"
+  },
+  {
+    "From": "Space Craft",
+    "To": "Satélite"
+  },
+  {
+    "From": "Space Craft",
+    "To": "Antenas"
+  },
+  {
+    "From": "Space Craft",
+    "To": "Emisión"
+  },
+  {
+    "From": "Space Craft",
+    "To": "Cosmos"
+  },
+  {
+    "From": "Space Craft",
+    "To": "Mirar el cielo"
+  },
+  {
+    "From": "Satélite",
+    "To": "Emisión"
+  },
+  {
+    "From": "Satélite",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Satélite",
+    "To": "Antenas"
+  },
+  {
+    "From": "Satélite",
+    "To": "Spacecraft"
+  },
+  {
+    "From": "Satélite",
+    "To": "Desplome Orbital"
+  },
+  {
+    "From": "Satélite",
+    "To": "Ruido"
+  },
+  {
+    "From": "Satélite",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Radio",
+    "To": "Emisión"
+  },
+  {
+    "From": "Radio",
+    "To": "Antena"
+  },
+  {
+    "From": "Radio",
+    "To": "Canal"
+  },
+  {
+    "From": "Radio",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Radio",
+    "To": "Electromagnetismo"
+  },
+  {
+    "From": "Radio",
+    "To": "Glitch"
+  },
+  {
+    "From": "Radio",
+    "To": "Ruido"
+  },
+  {
+    "From": "Radio",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Radio",
+    "To": "Mensaje"
+  },
+  {
+    "From": "Emisión",
+    "To": "Mensaje"
+  },
+  {
+    "From": "Emisión",
+    "To": "Canal"
+  },
+  {
+    "From": "Emisión",
+    "To": "Antena"
+  },
+  {
+    "From": "Emisión",
+    "To": "Electromagnetismo"
+  },
+  {
+    "From": "Emisión",
+    "To": "Radio"
+  },
+  {
+    "From": "Mensaje",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Mensaje",
+    "To": "Imagen"
+  },
+  {
+    "From": "Mensaje",
+    "To": "Emisión"
+  },
+  {
+    "From": "Mensaje",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Mensaje",
+    "To": "Canal"
+  },
+  {
+    "From": "Mensaje",
+    "To": "Radio"
+  },
+  {
+    "From": "Naturaleza",
+    "To": "Mitología"
+  },
+  {
+    "From": "Naturaleza",
+    "To": "Domesticación"
+  },
+  {
+    "From": "Naturaleza",
+    "To": "Paisaje"
+  },
+  {
+    "From": "Naturaleza",
+    "To": "Dominio"
+  },
+  {
+    "From": "Naturaleza",
+    "To": "Antropoceno"
+  },
+  {
+    "From": "Cosmos",
+    "To": "Mirar el cielo"
+  },
+  {
+    "From": "Cosmos",
+    "To": "Electromagnetismo"
+  },
+  {
+    "From": "Cosmos",
+    "To": "Cosmogonía"
+  },
+  {
+    "From": "Cosmos",
+    "To": "Spacecraft"
+  },
+  {
+    "From": "Cosmos",
+    "To": "Deep Time"
+  },
+  {
+    "From": "Cosmogonía",
+    "To": "Cosmos"
+  },
+  {
+    "From": "Cosmogonía",
+    "To": "Mitología"
+  },
+  {
+    "From": "Cosmogonía",
+    "To": "Rito"
+  },
+  {
+    "From": "Cosmogonía",
+    "To": "Nuevos Mitos"
+  },
+  {
+    "From": "Rito",
+    "To": "Nuevos Ritos"
+  },
+  {
+    "From": "Rito",
+    "To": "Sagrado"
+  },
+  {
+    "From": "Rito",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Rito",
+    "To": "Cosmogonía"
+  },
+  {
+    "From": "Lenguaje",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Lenguaje",
+    "To": "Canal"
+  },
+  {
+    "From": "Lenguaje",
+    "To": "Interferencia"
+  },
+  {
+    "From": "Lenguaje",
+    "To": "Domesticación"
+  },
+  {
+    "From": "Lenguaje",
+    "To": "Oráculo"
+  },
+  {
+    "From": "Lenguaje",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Antropoceno",
+    "To": "Naturaleza"
+  },
+  {
+    "From": "Antropoceno",
+    "To": "Dominio"
+  },
+  {
+    "From": "Antropoceno",
+    "To": "Deep Time"
+  },
+  {
+    "From": "Antropoceno",
+    "To": "Paisaje"
+  },
+  {
+    "From": "Glitch",
+    "To": "Imagen"
+  },
+  {
+    "From": "Glitch",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Glitch",
+    "To": "Estética"
+  },
+  {
+    "From": "Glitch",
+    "To": "Ruptura"
+  },
+  {
+    "From": "Glitch",
+    "To": "Ruido"
+  },
+  {
+    "From": "Textil",
+    "To": "Craft"
+  },
+  {
+    "From": "Textil",
+    "To": "Archivo"
+  },
+  {
+    "From": "Textil",
+    "To": "Antena"
+  },
+  {
+    "From": "Textil",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Informática",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Informática",
+    "To": "Modelado"
+  },
+  {
+    "From": "Informática",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Diseño",
+    "To": "Craft"
+  },
+  {
+    "From": "Diseño",
+    "To": "Estética"
+  },
+  {
+    "From": "Diseño",
+    "To": "Modelado"
+  },
+  {
+    "From": "Diseño",
+    "To": "Realidad Intervenida"
+  },
+  {
+    "From": "I Ching",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "I Ching",
+    "To": "Oráculo"
+  },
+  {
+    "From": "I Ching",
+    "To": "Probabilidad"
+  },
+  {
+    "From": "I Ching",
+    "To": "Predicción"
+  },
+  {
+    "From": "I Ching",
+    "To": "Sagrado"
+  },
+  {
+    "From": "I Ching",
+    "To": "Nuevos Ritos"
+  },
+  {
+    "From": "Ruido Gaussiano",
+    "To": "Probabilidad"
+  },
+  {
+    "From": "Ruido Gaussiano",
+    "To": "Ruido"
+  },
+  {
+    "From": "Ruido Gaussiano",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Ruido Gaussiano",
+    "To": "Modelado"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Satélite"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Antenas"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Domesticación"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Control"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Teconlogía",
+    "To": "Oráculo"
+  },
+  {
+    "From": "Electromagnetismo",
+    "To": "Antena"
+  },
+  {
+    "From": "Electromagnetismo",
+    "To": "Cosmos"
+  },
+  {
+    "From": "Electromagnetismo",
+    "To": "Imagen"
+  },
+  {
+    "From": "Electromagnetismo",
+    "To": "Emisión"
+  },
+  {
+    "From": "Electromagnetismo",
+    "To": "Comunicación"
+  },
+  {
+    "From": "Electromagnetismo",
+    "To": "Infraestructura"
+  },
+  {
+    "From": "Electromagnetismo",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Simulación",
+    "To": "Tecnología"
+  },
+  {
+    "From": "Simulación",
+    "To": "Diseño"
+  },
+  {
+    "From": "Simulación",
+    "To": "Algoritmos"
+  },
+  {
+    "From": "Simulación",
+    "To": "Realidad Intervenida"
+  },
+  {
+    "From": "Simulación",
+    "To": "Rito"
+  }
+]
